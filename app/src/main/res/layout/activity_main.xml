@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--overall constraint layout to house all views and view group-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity"
+    android:background="@color/backgroundWhite"
+    >
+<!--card view for checkout panel-->
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="0dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    >
+<!--switch-->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch2"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mode"
+        />
+<!--    chectout text-->
+    <TextView
+        android:id="@+id/checkout_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/checkout"
+        android:textAppearance="@style/checkout_text_appearance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+<!--    small back button with arrow within-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/back_arrow_main_container"
+        android:layout_width="46dp"
+        app:cardBackgroundColor="@color/roundButton"
+        android:layout_height="46dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="17dp"
+
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/back_arrow_small_container"
+            android:layout_width="24dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/back_arrow"
+                android:layout_width="16dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_baseline_arrow_back_24" />
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
+
+<!--start of scroll view-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="80dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--start of address view-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/address_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="184dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="133dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/bigCardColor"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="60dp"
+        app:cardMaxElevation="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/deliver_to_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/deliver_to"
+            android:textAppearance="@style/deliver_to"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+<!--card view for map icon-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/map_border"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="71dp"
+            android:layout_marginStart="15dp"
+            app:cardBackgroundColor="@color/roundButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="20dp"
+            android:elevation="60dp"
+
+            >
+            <View
+                android:id="@+id/small_map"
+                    android:layout_width="18.2dp"
+                    android:layout_height="22.1dp"
+                    android:background="@drawable/ic_map_icon"
+                    android:layout_gravity="center"
+                     android:elevation="60dp"
+                />
+            <View
+                android:id="@+id/small_dot_under_map"
+                android:layout_width="13dp"
+                android:layout_height="2.6dp"
+                android:background="@drawable/ic_ellipse_743"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="12dp"
+                android:elevation="60dp"
+
+                />
+
+        </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/address_text"
+                android:layout_width="244dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="71dp"
+                android:text="@string/address"
+                android:textAppearance="@style/address"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+<androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/change_address_button"
+    android:layout_width="120dp"
+    android:layout_height="33dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/address_text"
+    android:text="@string/change_address"
+    android:textAppearance="@style/change_address"
+    android:background="@drawable/round_btn"
+    android:gravity="center"
+
+    />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <!--end of address view-->
+
+
+    <!--start of payment card view-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/payment_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="184dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/bigCardColor"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="60dp"
+        app:cardMaxElevation="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address_card_view">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/payment_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/payment_method"
+                android:textAppearance="@style/deliver_to"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+<!--card view symbol-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_border"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="71dp"
+                app:cardBackgroundColor="@color/roundButton"
+                android:layout_marginStart="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardCornerRadius="20dp"
+                android:elevation="60dp"
+
+                >
+<!--payment icon-->
+                <View
+                    android:id="@+id/small_card"
+                    android:layout_width="21dp"
+                    android:layout_height="18.9dp"
+                    android:background="@drawable/ic_card_image"
+                    android:layout_gravity="center"
+                    android:elevation="60dp"
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/card_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="71dp"
+                android:text="@string/card_pin"
+                android:textAppearance="@style/address"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+            <TextView
+                android:id="@+id/card_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="2dp"
+                android:text="@string/visa"
+                android:textAppearance="@style/address"
+                app:layout_constraintTop_toBottomOf="@id/card_pin"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/use_other_button"
+                android:layout_width="120dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_pin"
+                android:text="@string/change_address"
+                android:textAppearance="@style/change_address"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <!--end of payment card view-->
+
+    <!--start of total amount card view-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/calculated_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="204dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/bigCardColor"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="60dp"
+        app:cardMaxElevation="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_card_view">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/amount"
+                android:textAppearance="@style/deliver_to"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <TextView
+                android:id="@+id/item_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/item_total"
+                android:textAppearance="@style/item_total_delivery"
+                app:layout_constraintTop_toBottomOf="@id/amount"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <TextView
+                android:id="@+id/delivery_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/delivery_fee"
+                android:textAppearance="@style/item_total_delivery"
+                app:layout_constraintTop_toBottomOf="@id/item_total"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <TextView
+                android:id="@+id/total_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/total"
+                android:textAppearance="@style/item_total_delivery_bold"
+                app:layout_constraintTop_toBottomOf="@id/delivery_fee"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <TextView
+                android:id="@+id/item_total_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="78.5dp"
+                android:text="@string/item_total_fee"
+                android:textAppearance="@style/item_total_delivery"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <TextView
+                android:id="@+id/delivery_fee_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/delivery_fee_value"
+                android:textAppearance="@style/item_total_delivery"
+                app:layout_constraintTop_toBottomOf="@id/item_total_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <TextView
+                android:id="@+id/total_fee_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/total_fee_value"
+                android:textAppearance="@style/item_total_delivery_bold"
+                app:layout_constraintTop_toBottomOf="@id/delivery_fee_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+    <!--end of total amount card view-->
+
+<!--place order view-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="148dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="100dp"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="44dp"
+            android:layout_gravity="center"
+            android:text="@string/place_order"
+            android:textColor="@color/white"
+            android:background="@drawable/small_base_button"
+            android:textAppearance="@style/place_order"
+            />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,40 @@
+<!--image assert for card point view-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="14dp"
+    android:height="3dp"
+    android:viewportWidth="14"
+    android:viewportHeight="3">
+  <path
+      android:pathData="M7.0996,3C10.6895,3 13.5996,2.418 13.5996,1.7C13.5996,0.982 10.6895,0.4 7.0996,0.4C3.5098,0.4 0.5996,0.982 0.5996,1.7C0.5996,2.418 3.5098,3 7.0996,3Z"
+      android:strokeAlpha="0.4"
+      android:fillAlpha="0.4">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="0.399994"
+          android:startX="0.136897"
+          android:endY="7.17756"
+          android:endX="11.9705"
+          android:type="linear">
+        <item android:offset="0" android:color="#FFFFAE88"/>
+        <item android:offset="1" android:color="#FF8F93EA"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M7.0996,3C10.6895,3 13.5996,2.418 13.5996,1.7C13.5996,0.982 10.6895,0.4 7.0996,0.4C3.5098,0.4 0.5996,0.982 0.5996,1.7C0.5996,2.418 3.5098,3 7.0996,3Z"
+      android:strokeAlpha="0.4"
+      android:fillAlpha="0.4">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="-1.76667"
+          android:startX="10.9555"
+          android:endY="2.77846"
+          android:endX="9.46668"
+          android:type="linear">
+        <item android:offset="0" android:color="#FF5FD3FF"/>
+        <item android:offset="1" android:color="#0063D6FF"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+</vector>
